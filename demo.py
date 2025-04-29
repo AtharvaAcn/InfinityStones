@@ -1,4 +1,5 @@
 
+
       
 import os  
 import base64
@@ -6,7 +7,7 @@ from openai import AzureOpenAI
 
 endpoint = os.getenv("ENDPOINT_URL", "https://datastudioopenai.openai.azure.com/openai/deployments/test/chat/completions?api-version=2025-01-01-preview")  
 deployment = os.getenv("DEPLOYMENT_NAME", "test")  
-subscription_key = os.getenv("AZURE_OPENAI_API_KEY", "97ff1dd8a91c44aa94af45a603808edd")  
+subscription_key = os.getenv("AZURE_OPENAI_API_KEY", -)  
 
 # Initialize Azure OpenAI Service client with key-based authentication    
 client = AzureOpenAI(  
@@ -27,6 +28,15 @@ chat_prompt = [
             {
                 "type": "text",
                 "text": "You are an AI assistant that helps people find information."
+            }
+        ]
+    },
+    {
+        "role": "user",
+        "content": [
+            {
+                "type": "text",
+                "text": "what is teh diffrerence betweeen car and truck"
             }
         ]
     }
